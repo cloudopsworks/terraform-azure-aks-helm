@@ -42,3 +42,8 @@ variable "vars" {
   type    = map(string)
   default = {}
 }
+
+variable "var_files" {
+  type    = list(string)
+  default = []
+}

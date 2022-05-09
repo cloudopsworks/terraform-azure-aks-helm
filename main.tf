@@ -6,6 +6,7 @@
 
 locals {
   values_file      = "values/${var.release_name}-values.yaml"
+  all_values       = concat([local.values_file], var.var_files)
   values_file_sha1 = filesha1(local.values_file)
   vars_values_sha1_list = [for item_key, item_value in var.vars :
     format("%s-%s", sha1(item_key), sha1(item_value))
@@ -27,9 +28,8 @@ resource "helm_release" "app_release" {
   version    = var.chart_version
   wait       = false
 
-  values = [
-    file(local.values_file)
-  ]
+  values = [ for item in local.all_values : 
+    file(item) ]
 
   dynamic "set_sensitive" {
     for_each = var.vars
