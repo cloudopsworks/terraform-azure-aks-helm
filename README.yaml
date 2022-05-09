@@ -1,0 +1,38 @@
+name: Azure AKS Helm Install Module
+
+#logo: logo/logo.jpg
+
+license: "APACHE2"
+
+copyrights:
+  - name: "Cloud Ops Works LLC"
+    url: "https://cloudops.works"
+    year: "2021"
+
+github_repo: cloudopsworks/terraform-azure-aks-helm
+
+
+description: |-
+  This Module performs helm install for AKS applications.
+
+# Introduction to the project
+#introduction: |-
+#  This is an introduction.
+
+# How to use this project
+#usage: |-
+
+# Example usage
+#examples: |-
+
+# How to get started quickly
+#quickstart: |-
+
+# Uncomment to include terraform generated docs (optional)
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+contributors:
+  - name: "Cristian Beraha"
+    github: "berahac"
